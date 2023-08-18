@@ -14,6 +14,11 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
+// Add configuration for BookDbContext
+var bookConnectionString = builder.Configuration.GetConnectionString("BookDbContext");
+builder.Services.AddDbContext<BookDbContext>(options =>
+    options.UseSqlServer(bookConnectionString));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

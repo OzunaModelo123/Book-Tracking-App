@@ -2,7 +2,7 @@
 {
     public class CategoryType
     {
-        public int? TypeId { get; set; }
+        public int? CategoryTypeId { get; set; }
         public string? Type { get; set; }
         public string? Name { get; set; }
     }
