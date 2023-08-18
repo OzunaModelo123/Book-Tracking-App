@@ -18,6 +18,14 @@ namespace Book_Track.Data
         {
             // Define your model configuration here if needed
             base.OnModelCreating(modelBuilder);
+
+
+            modelBuilder.Entity<Category>().HasData(
+                new Category { CategoryId = 1, Name = "Fiction" },
+                new Category { CategoryId = 2, Name = "Non-Fiction" }
+
+                );
+                
         }
     }
 }

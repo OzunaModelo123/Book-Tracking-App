@@ -50,9 +50,12 @@ namespace Book_Track.Controllers
         // GET: Books/Create
         public IActionResult Create()
         {
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId");
+            var categories = _context.Categories.ToList();
+            ViewBag.Categories = new SelectList(categories, "CategoryId", "Name");
             return View();
         }
+
+
 
         // POST: Books/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
