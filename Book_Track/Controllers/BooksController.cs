@@ -22,9 +22,11 @@ namespace Book_Track.Controllers
         // GET: Books
         public async Task<IActionResult> Index()
         {
-            var bookDbContext = _context.Books.Include(b => b.Category);
-            return View(await bookDbContext.ToListAsync());
+            var books = await _context.Books.Include(b => b.Category).ToListAsync();
+            return View(books);
         }
+
+
 
         // GET: Books/Details/5
         public async Task<IActionResult> Details(int? id)

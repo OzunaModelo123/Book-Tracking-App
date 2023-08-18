@@ -9,5 +9,6 @@
 
         public CategoryType? CategoryType { get; set; }
         public ICollection<Book>? Books { get; set; }
+        public string Name { get; internal set; }
     }
 }
